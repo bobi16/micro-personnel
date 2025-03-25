@@ -4,9 +4,68 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>3.4.4</version>
+    </parent>
+
     <groupId>com.bobiko</groupId>
     <artifactId>micro-personnel</artifactId>
     <version>0.0.1</version>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>micro-personnel-common</module>
+        <module>micro-personnel-security</module>
+    </modules>
 
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <project.current.version>0.0.1</project.current.version>
+        <spring.boot.version>3.4.4</spring.boot.version>
+        <spring.web.version>6.2.5</spring.web.version>
+        <jakarta.version>6.1.0</jakarta.version>
+        <hutool.version>5.8.26</hutool.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${jakarta.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bobiko</groupId>
+                <artifactId>micro-personnel-common-core</artifactId>
+                <version>${project.current.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.bobiko</groupId>
+                <artifactId>micro-personnel-security</artifactId>
+                <version>${project.current.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

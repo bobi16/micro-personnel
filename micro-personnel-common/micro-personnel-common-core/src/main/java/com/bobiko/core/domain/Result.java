@@ -1,5 +1,7 @@
 package com.bobiko.core.domain;
 
+import com.bobiko.core.constants.ResultStatus;
+
 import java.io.Serializable;
 
 /**
@@ -26,6 +28,11 @@ public class Result<T> implements Serializable
 
     }
 
+    public Result(ResultStatus status){
+        this.code = status.getCode();
+        this.message = status.getMessage();
+    }
+
     public Result(Integer code,String message,T data){
         this.code = code;
         this.message = message;
@@ -36,12 +43,20 @@ public class Result<T> implements Serializable
         return new Result<>(1, "success", null);
     }
 
+    public static <T> Result<T> success(ResultStatus status){
+        return new Result<>(status);
+    }
+
     public static <T> Result<T> success(T data){
         return new Result<>(1, "success", data);
     }
 
     public static <T> Result<T> error(String message){
         return new Result<>(0, message, null);
+    }
+
+    public static <T> Result<T> error(ResultStatus status){
+        return new Result<>(status);
     }
 
     public Integer getCode() {
