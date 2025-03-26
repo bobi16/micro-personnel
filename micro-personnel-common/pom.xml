@@ -14,5 +14,6 @@
 
     <modules>
         <module>micro-personnel-common-core</module>
+        <module>micro-personnel-common-redis</module>
     </modules>
 </project>

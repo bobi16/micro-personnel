@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://8.156.68.221:3306/ssm?characterEncoding=utf8&useSSL=false
+    username: ssm
+    password: 3344520..hhy
+  data:
+    redis:
+      # 基本连接配置
+      host: 8.156.68.221  # Redis服务器主机名/IP
+      port: 16379              # Redis端口，默认6379
+      password: 3344520..hhy # Redis认证密码
+      username: default       # Redis6.0+支持的用户名(可选)
+      timeout: 2000           # 连接超时时间(毫秒)
+      client-type: jedis      # 强制使用Jedis客户端
+      # Jedis专用配置
+      jedis:
+        pool:
+          # 连接池配置
+          enabled: true       # 是否启用连接池(默认true)
+          max-active: 200     # 最大活跃连接数(默认8)
+          max-idle: 50        # 最大空闲连接数(默认8)
+          min-idle: 20        # 最小空闲连接数(默认0)
+          max-wait: 1000      # 获取连接时的最大等待毫秒数(默认-1，表示无限等待)
+          # 高级配置
+          time-between-eviction-runs: 30000 # 空闲对象逐出器运行间隔(毫秒)
+          min-evictable-idle-time: 60000   # 连接最小空闲时间(毫秒)，超过此值可能被逐出
+          num-tests-per-eviction-run: 3    # 每次逐出检查时，逐出的最大数目
+          test-on-create: false            # 创建连接时是否测试连接
+          test-on-borrow: true             # 获取连接时是否测试连接
+          test-on-return: false            # 归还连接时是否测试连接
+          test-while-idle: true            # 空闲时是否测试连接
+
+security:
+  ignore:
+    urls:
+      - /login

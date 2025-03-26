@@ -1,6 +1,6 @@
-package com.bobiko.core.domain;
+package com.bobiko.common.core.domain;
 
-import com.bobiko.core.constants.ResultStatus;
+import com.bobiko.common.core.constants.ResultStatus;
 
 import java.io.Serializable;
 

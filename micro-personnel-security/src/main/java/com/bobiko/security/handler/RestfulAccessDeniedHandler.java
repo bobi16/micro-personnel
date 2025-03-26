@@ -1,8 +1,8 @@
 package com.bobiko.security.handler;
 
 import cn.hutool.json.JSONUtil;
-import com.bobiko.core.constants.ResultStatus;
-import com.bobiko.core.domain.Result;
+import com.bobiko.common.core.constants.ResultStatus;
+import com.bobiko.common.core.domain.Result;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

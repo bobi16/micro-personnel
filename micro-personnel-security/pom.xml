@@ -37,5 +37,10 @@
             <groupId>com.bobiko</groupId>
             <artifactId>micro-personnel-common-core</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.bobiko</groupId>
+            <artifactId>micro-personnel-common-redis</artifactId>
+        </dependency>
     </dependencies>
 </project>

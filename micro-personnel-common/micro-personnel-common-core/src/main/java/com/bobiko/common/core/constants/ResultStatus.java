@@ -1,4 +1,4 @@
-package com.bobiko.core.constants;
+package com.bobiko.common.core.constants;
 
 public enum ResultStatus
 {
