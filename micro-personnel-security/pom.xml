@@ -42,5 +42,9 @@
             <groupId>com.bobiko</groupId>
             <artifactId>micro-personnel-common-redis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.bobiko</groupId>
+            <artifactId>micro-personnel-domain</artifactId>
+        </dependency>
     </dependencies>
 </project>

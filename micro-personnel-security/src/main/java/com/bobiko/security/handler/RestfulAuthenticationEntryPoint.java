@@ -23,7 +23,7 @@ public class RestfulAuthenticationEntryPoint implements AuthenticationEntryPoint
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        response.getWriter().println(JSONUtil.parseObj(Result.error(ResultStatus.FORBIDDEN)));
+        response.getWriter().println(JSONUtil.parseObj(Result.error(ResultStatus.UNAUTHORIZED)));
         response.getWriter().flush();
     }
 }

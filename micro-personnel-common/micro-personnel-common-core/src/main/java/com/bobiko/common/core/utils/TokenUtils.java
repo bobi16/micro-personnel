@@ -29,6 +29,7 @@ public class TokenUtils
      */
     public static String createToken(String username) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("username", username);
         return createToken(claims, username);
     }
 
@@ -39,7 +40,7 @@ public class TokenUtils
      * @return
      */
     public static String createToken(Map<String, Object> claims, String subject) {
-        Date expirationDate = new Date(System.currentTimeMillis() + TokenConstants.TOKEN_EXPIRE);
+        Date expirationDate = new Date(new Date().getTime() + TokenConstants.TOKEN_EXPIRE * 1000);
         return Jwts.builder().claims(claims).subject(subject).expiration(expirationDate).signWith(key).compact();
     }
 
@@ -51,7 +52,7 @@ public class TokenUtils
     private static Claims getClaimsFromToken(String token) {
         Claims claims;
         try {
-            claims = Jwts.parser().setSigningKey(key).build().parseClaimsJws(token).getBody();
+            claims = Jwts.parser().setSigningKey(key).build().parseClaimsJws(token).getPayload();
         } catch (Exception e) {
             claims = null;
         }

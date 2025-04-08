@@ -34,9 +34,4 @@ public class RedisConfig
         template.afterPropertiesSet();
         return template;
     }
-
-    @Bean
-    public JedisConnectionFactory redisConnectionFactory() {
-        return new JedisConnectionFactory();
-    }
 }
