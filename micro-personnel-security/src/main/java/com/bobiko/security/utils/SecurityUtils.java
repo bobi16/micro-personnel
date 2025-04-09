@@ -1,5 +1,6 @@
 package com.bobiko.security.utils;
 
+import cn.hutool.core.util.StrUtil;
 import com.bobiko.domain.basic.LoginUser;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -63,5 +64,15 @@ public class SecurityUtils
         LoginUser loginUser = getLoginUser();
         if (null != loginUser) return loginUser.getUserId();
         return null;
+    }
+
+    /**
+     * 清理上下文对象
+     */
+    public static void logout() {
+        String username = getUsername();
+        if (StrUtil.isNotEmpty(username)){
+            SecurityContextHolder.clearContext();
+        }
     }
 }

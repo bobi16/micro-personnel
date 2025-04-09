@@ -32,5 +32,15 @@
             <groupId>com.bobiko</groupId>
             <artifactId>micro-personnel-common-core</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-captcha</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.bobiko</groupId>
+            <artifactId>micro-personnel-security</artifactId>
+        </dependency>
     </dependencies>
 </project>
